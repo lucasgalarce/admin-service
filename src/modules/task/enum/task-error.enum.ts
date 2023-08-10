@@ -1,0 +1,4 @@
+export enum TaskError {
+  TASK_NOT_FOUND = 'TASK_NOT_FOUND',
+  TASK_TITLE_EXISTS = 'TASK_TITLE_EXISTS',
+}
