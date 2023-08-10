@@ -20,26 +20,44 @@ export class TaskService extends UtilsService<Task> {
     return this.repository;
   }
 
-  async create(task: TaskDto) {
+  async createTask(task: TaskDto, userId: string) {
     const taskDb = await this.findOneByFilter({ where: [{ title: task.title }] });
     if (taskDb) throw new ForbiddenException({ type: TaskError.TASK_TITLE_EXISTS });
-    const user = await this.userService.findById(task.userId);
+    const user = await this.userService.findById(userId);
     if (!user) {
-      throw new NotFoundException(`User #${task.userId} not found`);
+      throw new NotFoundException(`User #${userId} not found`);
     }
 
     const newTask = { ...task, user };
-
-    return super.create(newTask);
+    super.create(newTask);
+    return 'Task created';
   }
 
-  async update(id: string, taskDto: UpdateTaskDto) {
-    if (!!taskDto.title) {
-      const taskDb = await this.findOneByFilter({ where: [{ title: taskDto.title }] });
-      if (taskDb && taskDb.id != id)
-        throw new ForbiddenException({ type: TaskError.TASK_TITLE_EXISTS });
+  async update(id: string, taskDto: UpdateTaskDto, userId: string) {
+    if (!!taskDto.title && !!taskDto.description) {
+      const taskDb = await this.findOneByFilter({
+        where: [{ id }],
+        relations: ['user'],
+      });
+
+      if (userId !== taskDb.user.id)
+        throw new ForbiddenException({ type: TaskError.TASK_OWNER_DIFFERENT });
     }
     return this.updateById(id, taskDto);
+  }
+
+  public async deleteTask(id: string, userId) {
+    const taskDb = await this.findOneByFilter({
+      where: [{ id }],
+      relations: ['user'],
+    });
+
+    if (!taskDb) throw new NotFoundException(`Task with id ${id} not found`);
+
+    if (userId !== taskDb.user.id)
+      throw new ForbiddenException({ type: TaskError.TASK_OWNER_DIFFERENT });
+
+    return this.getRepository().softDelete(id);
   }
 
   async findWithFiltersAndPagination(payload: TaskQueryDto) {

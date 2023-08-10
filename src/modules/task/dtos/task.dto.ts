@@ -9,13 +9,7 @@ export class TaskDto extends OmitType(Task, [
   'createdAt',
   'deletedAt',
   'updatedAt',
-  'user',
-] as const) {
-  @ApiProperty()
-  @IsNotEmpty()
-  @IsString()
-  readonly userId: string;
-}
+] as const) {}
 
 export class UpdateTaskDto extends PartialType(TaskDto) {}
 

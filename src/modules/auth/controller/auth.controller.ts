@@ -43,7 +43,6 @@ export class AuthController {
   @ApiBearerAuth()
   @HttpCode(HttpStatus.OK)
   async me(@Request() req: RequestWithUser) {
-    console.log(req.user);
     return req.user;
   }
 }
