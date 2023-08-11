@@ -34,7 +34,16 @@ And in the postman folder you have a file to import into the Postman app
 
 Once both services are up:
 
-Use gateway-service as the entry point:
+- First use admin-service to authenticate:
+
+curl http://localhost:3000/v1/admin-service/auth/login
+body:
+{
+"username": "admin",
+"password": "Admin2121!"
+}
+
+- Use gateway-service as the entry point:
 
 curl http://localhost:8080/v1/gateway-service/users or curl http://localhost:8080/v1/gateway-service/tasks
 
