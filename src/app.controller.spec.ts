@@ -6,7 +6,6 @@ import { config } from './config';
 
 describe('AppController', () => {
   let appController: AppController;
-  // let configService: ConfigService;
   beforeEach(async () => {
     const app: TestingModule = await Test.createTestingModule({
       imports: [
@@ -20,7 +19,6 @@ describe('AppController', () => {
     }).compile();
 
     appController = app.get<AppController>(AppController);
-    // configService = app.get<ConfigService>(ConfigService);
   });
 
   describe('root', () => {

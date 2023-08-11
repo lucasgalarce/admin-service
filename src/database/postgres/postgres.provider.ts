@@ -17,12 +17,7 @@ export const PostgresProvider: DynamicModule = TypeOrmModule.forRootAsync({
       autoLoadEntities: true,
       synchronize: postgres.sync,
       logging: postgres.logging ? 'all' : null,
-      // entities: ['dist/entities/*.js'],
       autoSchemaSync: postgres.autoSchemaSync,
-      // cli: {
-      //   migrationsDir: 'src/postgres/migrations',
-      //   entitiesDir: join(__dirname, '../../entity/*{.ts,.js}'),
-      // },
     } as PostgresConnectionOptions;
 
     return dbConfig;
