@@ -1,0 +1,1038 @@
+{
+	"info": {
+		"_postman_id": "2ed907db-5d2e-45eb-b281-392a82b61194",
+		"name": "admin-service-tasks-api",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "10412236"
+	},
+	"item": [
+		{
+			"name": "Tasks",
+			"item": [
+				{
+					"name": "Tasks",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:{{port}}/v1/admin-service/tasks",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "{{port}}",
+							"path": [
+								"v1",
+								"admin-service",
+								"tasks"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/:id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:{{port}}/v1/admin-service/tasks/e51970d6-06f1-41c7-af43-9dc5006a3e9a",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "{{port}}",
+							"path": [
+								"v1",
+								"admin-service",
+								"tasks",
+								"e51970d6-06f1-41c7-af43-9dc5006a3e9a"
+							],
+							"query": [
+								{
+									"key": "ids",
+									"value": "349851,349970",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add Task",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0aW1lIjoiVGh1IEZlYiAwOSAyMDIzIDE4OjE4OjI3IEdNVC0wMzAwIChob3JhIGVzdMOhbmRhciBkZSBBcmdlbnRpbmEpIiwidXNlcklkIjoxLCJpYXQiOjE2NzU5Nzc1MDd9.VW3fWh1uRQrBi7JAc51pu9Yqyb-u4HPBdQfEdzjQZL4",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"title\": \"task title user2 6\",\r\n  \"description\": \"testtesttest testtesttest\",\r\n  \"status\": \"open\"\r\n  }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:{{port}}/v1/admin-service/tasks",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "{{port}}",
+							"path": [
+								"v1",
+								"admin-service",
+								"tasks"
+							],
+							"query": [
+								{
+									"key": "model",
+									"value": "peugeot",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Task",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"deberia poder\",\r\n    \"description\": \"updated description\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:{{port}}/v1/admin-service/tasks/e51970d6-06f1-41c7-af43-9dc5006a3e9a",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "{{port}}",
+							"path": [
+								"v1",
+								"admin-service",
+								"tasks",
+								"e51970d6-06f1-41c7-af43-9dc5006a3e9a"
+							],
+							"query": [
+								{
+									"key": "ids",
+									"value": "349851,349970",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Task",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:{{port}}/v1/admin-service/tasks/b787528c-856b-4bc4-a080-e4464a9f482f",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "{{port}}",
+							"path": [
+								"v1",
+								"admin-service",
+								"tasks",
+								"b787528c-856b-4bc4-a080-e4464a9f482f"
+							],
+							"query": [
+								{
+									"key": "ids",
+									"value": "349851,349970",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Gateway",
+			"item": [
+				{
+					"name": "Get Users",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:{{gatewayPort}}/v1/gateway-service/users",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "{{gatewayPort}}",
+							"path": [
+								"v1",
+								"gateway-service",
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Tasks",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:{{gatewayPort}}/v1/gateway-service/tasks",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "{{gatewayPort}}",
+							"path": [
+								"v1",
+								"gateway-service",
+								"tasks"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "users/:id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:{{gatewayPort}}/v1/gateway-service/users/c7af21c6-41a9-45a4-8b58-6ee83190363e",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "{{gatewayPort}}",
+							"path": [
+								"v1",
+								"gateway-service",
+								"users",
+								"c7af21c6-41a9-45a4-8b58-6ee83190363e"
+							],
+							"query": [
+								{
+									"key": "ids",
+									"value": "349851,349970",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "tasks/:id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:{{gatewayPort}}/v1/gateway-service/tasks/357d1722-7885-4ae6-a22e-c223101db42a",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "{{gatewayPort}}",
+							"path": [
+								"v1",
+								"gateway-service",
+								"tasks",
+								"357d1722-7885-4ae6-a22e-c223101db42a"
+							],
+							"query": [
+								{
+									"key": "ids",
+									"value": "349851,349970",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add User",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0aW1lIjoiVGh1IEZlYiAwOSAyMDIzIDE4OjE4OjI3IEdNVC0wMzAwIChob3JhIGVzdMOhbmRhciBkZSBBcmdlbnRpbmEpIiwidXNlcklkIjoxLCJpYXQiOjE2NzU5Nzc1MDd9.VW3fWh1uRQrBi7JAc51pu9Yqyb-u4HPBdQfEdzjQZL4",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"user creado desde gatewa6\",\r\n    \"username\": \"user gateway6\",\r\n    \"email\": \"usergateway6@test.com\",\r\n    \"password\": \"User123!\",\r\n    \"role\": \"USER\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:{{gatewayPort}}/v1/gateway-service/users",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "{{gatewayPort}}",
+							"path": [
+								"v1",
+								"gateway-service",
+								"users"
+							],
+							"query": [
+								{
+									"key": "model",
+									"value": "peugeot",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add Task",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0aW1lIjoiVGh1IEZlYiAwOSAyMDIzIDE4OjE4OjI3IEdNVC0wMzAwIChob3JhIGVzdMOhbmRhciBkZSBBcmdlbnRpbmEpIiwidXNlcklkIjoxLCJpYXQiOjE2NzU5Nzc1MDd9.VW3fWh1uRQrBi7JAc51pu9Yqyb-u4HPBdQfEdzjQZL4",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"title\": \"task title userr test2\",\r\n  \"description\": \"testtesttest testtesttest\",\r\n  \"status\": \"open\"\r\n  }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:{{gatewayPort}}/v1/gateway-service/tasks",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "{{gatewayPort}}",
+							"path": [
+								"v1",
+								"gateway-service",
+								"tasks"
+							],
+							"query": [
+								{
+									"key": "model",
+									"value": "peugeot",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update User",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"edited name3\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:{{gatewayPort}}/v1/gateway-service/users/165bddc6-ccc8-40a7-99e3-386d2067f6cc",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "{{gatewayPort}}",
+							"path": [
+								"v1",
+								"gateway-service",
+								"users",
+								"165bddc6-ccc8-40a7-99e3-386d2067f6cc"
+							],
+							"query": [
+								{
+									"key": "ids",
+									"value": "349851,349970",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Task",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"task edited\",\r\n    \"description\": \"updated description\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:{{gatewayPort}}/v1/gateway-service/tasks/357d1722-7885-4ae6-a22e-c223101db42a",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "{{gatewayPort}}",
+							"path": [
+								"v1",
+								"gateway-service",
+								"tasks",
+								"357d1722-7885-4ae6-a22e-c223101db42a"
+							],
+							"query": [
+								{
+									"key": "ids",
+									"value": "349851,349970",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete User",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:{{gatewayPort}}/v1/gateway-service/users/446a62b9-6ecb-4544-9336-6351fecc4f1c",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "{{gatewayPort}}",
+							"path": [
+								"v1",
+								"gateway-service",
+								"users",
+								"446a62b9-6ecb-4544-9336-6351fecc4f1c"
+							],
+							"query": [
+								{
+									"key": "ids",
+									"value": "349851,349970",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Task",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:{{gatewayPort}}/v1/gateway-service/tasks/eb515125-2d59-42bb-b6a6-e9cc4bbdb5f3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "{{gatewayPort}}",
+							"path": [
+								"v1",
+								"gateway-service",
+								"tasks",
+								"eb515125-2d59-42bb-b6a6-e9cc4bbdb5f3"
+							],
+							"query": [
+								{
+									"key": "ids",
+									"value": "349851,349970",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Users",
+			"item": [
+				{
+					"name": "Users",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:{{port}}/v1/admin-service/users",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "{{port}}",
+							"path": [
+								"v1",
+								"admin-service",
+								"users"
+							],
+							"query": [
+								{
+									"key": "username",
+									"value": "admin",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/:id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:{{port}}/v1/admin-service/users/9644b19b-506f-453a-bc55-f780fc4e2e4a",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "{{port}}",
+							"path": [
+								"v1",
+								"admin-service",
+								"users",
+								"9644b19b-506f-453a-bc55-f780fc4e2e4a"
+							],
+							"query": [
+								{
+									"key": "ids",
+									"value": "349851,349970",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add User",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0aW1lIjoiVGh1IEZlYiAwOSAyMDIzIDE4OjE4OjI3IEdNVC0wMzAwIChob3JhIGVzdMOhbmRhciBkZSBBcmdlbnRpbmEpIiwidXNlcklkIjoxLCJpYXQiOjE2NzU5Nzc1MDd9.VW3fWh1uRQrBi7JAc51pu9Yqyb-u4HPBdQfEdzjQZL4",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"user5\",\r\n    \"username\": \"user5\",\r\n    \"email\": \"user5@test.com\",\r\n    \"password\": \"User123!\",\r\n    \"role\": \"USER\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:{{port}}/v1/admin-service/users",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "{{port}}",
+							"path": [
+								"v1",
+								"admin-service",
+								"users"
+							],
+							"query": [
+								{
+									"key": "ids",
+									"value": "349851,349970",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update User",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"edited name\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:{{port}}/v1/admin-service/users/9644b19b-506f-453a-bc55-f780fc4e2e4a",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "{{port}}",
+							"path": [
+								"v1",
+								"admin-service",
+								"users",
+								"9644b19b-506f-453a-bc55-f780fc4e2e4a"
+							],
+							"query": [
+								{
+									"key": "ids",
+									"value": "349851,349970",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete User",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:{{port}}/v1/admin-service/users/6b235431-7240-4aeb-ade6-b8e4e28bc945",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "{{port}}",
+							"path": [
+								"v1",
+								"admin-service",
+								"users",
+								"6b235431-7240-4aeb-ade6-b8e4e28bc945"
+							],
+							"query": [
+								{
+									"key": "ids",
+									"value": "349851,349970",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Login",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"const jsonData = pm.response.json();\r",
+									"const token = jsonData.token;\r",
+									"pm.collectionVariables.set(\"token\", token);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"admin\",\r\n    \"password\": \"Admin2121!\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:{{port}}/v1/admin-service/auth/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "{{port}}",
+							"path": [
+								"v1",
+								"admin-service",
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "me",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"admin@test.com\",\r\n    \"password\": \"123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:{{port}}/v1/admin-service/auth/me",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "{{port}}",
+							"path": [
+								"v1",
+								"admin-service",
+								"auth",
+								"me"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "port",
+			"value": "3000",
+			"type": "string"
+		},
+		{
+			"key": "token",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"key": "gatewayPort",
+			"value": "8080",
+			"type": "string"
+		}
+	]
+}
