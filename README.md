@@ -39,3 +39,7 @@ Use gateway-service as the entry point:
 curl http://localhost:8080/v1/gateway-service/users or curl http://localhost:8080/v1/gateway-service/tasks
 
 This request will be proxied over to the admin-service.
+
+## Documentation
+
+Swagger is running on: http://localhost:3000/v1/admin-service/docs
