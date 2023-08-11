@@ -29,12 +29,11 @@ import { UserService } from '../service/user.service';
 import { User } from '../entity/user.entity';
 import { TransformClassToPlain } from '@nestjs/class-transformer';
 import { JwtAuthGuard } from 'src/modules/auth/guard/jwt.guard';
-import { RolesGuard } from 'src/modules/auth/guard/role.guard';
 import { CurrentUser } from 'src/decorators/currentUser.decorator';
 
 @Controller('/users')
 @ApiTags('Users')
-@UseGuards(JwtAuthGuard, RolesGuard)
+@UseGuards(JwtAuthGuard)
 @ApiBearerAuth()
 @UseInterceptors(TransformClassToPlain)
 export class UserController {
